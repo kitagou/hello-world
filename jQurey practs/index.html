@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lamg="ja">
+ <head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="css/reset.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <title>javascript practice</title>
+
+ </head>
+  
+ 
+ 
+  <body>
+    <header>
+      <h1>sample</h1>
+    </header>
+
+    <main>
+        <div id="target" class="targetClass"></div>
+        <div>
+         <input type="text" id="input" value="">
+         <input type="button" id="button" value="入力">
+         <input type="button" id="button2" value="取消">
+         
+       </div>
+
+      <h2 id="title1" class="title3">jqueryの練習</h2>
+      <ul>
+          <li id="javascript">javascript</li>
+          <li id="jquery">jquery</li>
+          <li id="php">PHP</li>
+      </ul>
+    </main>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script> 
+    <script>
+      'use strict';
+      function append() {
+        $('#button').click(function() {
+          var value = $('#input').val();
+          $('ul').append(`<li class="php">${value}<div class="remove"></div></li>`);
+          $('#input').val('');
+        });
+      }
+
+    function removelist() {
+      $(".remove").click(function(){
+        $(this).remove();
+      });
+    }
+    
+    //function remove() {
+    //$('#button2').click(function() {
+    //$('.title1').remove();
+    //});}
+  
+    $(function() {
+      append();
+      removelist();
+    });
+  </script>
+  </body>
+</html>
