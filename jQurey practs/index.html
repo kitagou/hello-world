@@ -34,29 +34,21 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script> 
     <script>
       'use strict';
+      
       function append() {
         $('#button').click(function() {
           var value = $('#input').val();
           $('ul').append(`<li class="php">${value}<div class="remove"></div></li>`);
           $('#input').val('');
+          $("li").click(function() {
+          $(this).remove();
+          });
         });
       }
-
-    function removelist() {
-      $(".remove").click(function(){
-        $(this).remove();
-      });
-    }
-    
-    //function remove() {
-    //$('#button2').click(function() {
-    //$('.title1').remove();
-    //});}
-  
-    $(function() {
-      append();
-      removelist();
-    });
+       
+        $(function() {
+           append();
+        });
   </script>
   </body>
 </html>
